@@ -1,0 +1,168 @@
+/*!
+ * Component name:  empWines
+ * Base: Bootstrap v4.6.2
+ * Autor: Emiliano Mendoza Peña
+ * Copyright: EMP
+
+    0.  :root   
+    1.  empWines
+    2.  empWines_shopping_cart 
+        2.1. empWines_cartIcon
+    3.  empWines_list
+
+    10. Responsive
+*/
+
+
+/* 0. :root 
+--------------------------------------------------------------*/
+:root {
+    --emp-color-white: #ffffff;
+    --emp-color-light-gray: #eeeeee;
+    --emp-color-light-green: #d3f7cd;
+    --emp-color-medium-green: #b5f7cd;
+    --emp-color-dark-gray: #333333;
+    --emp-color-olive-gray: #81876c;
+}
+
+
+/* 1. empWines
+--------------------------------------------------------------*/
+body {
+    background-color: var(--emp-color-light-gray);
+    color: var(--emp-color-dark-gray);
+    font-family: 'Montserrat', sans-serif;    
+}
+
+
+/* 2. empWines_shopping_cart
+--------------------------------------------------------------*/
+
+/* 2.1. empWines_cartIcon */
+#empWines_cartIcon{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--emp-color-medium-green);
+    color: var(--emp-color-dark-gray);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+#empWines_cartIcon img{
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+#carrito{
+    position: fixed;
+    min-height: 100vh;
+    width: 100vw;   
+    background-color: var(--emp-color-white);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    top: 0;
+    right: -100%;
+    transition: right 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 100px;
+    overflow-y: auto;
+}
+#carrito.active{
+    right: 0;
+}
+#carrito .producto{
+    padding-bottom: 0px;
+    width:100%;
+}
+
+/* empWines_cartFooter */
+.empWines_cartFooter{
+    background-color: var(--emp-color-light-gray);
+    border-top:1px solid #ccc;
+    bottom: 0;
+    padding:.5em;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+}
+.empWines_cartFooter #total {
+    background-color: var(--emp-color-medium-green);
+    color: var(--emp-color-dark-gray);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+.empWines_cartFooter #botonQueLimpia {
+    margin: 20px 0;
+}
+
+/* 3. empWines_list
+--------------------------------------------------------------*/
+.empWines_list .productos h4 {
+    display: flex;
+    align-items: center;
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #ccc;
+    min-height: 80px;
+    padding:10px 0px;
+}
+.productos{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 10px;
+}
+.producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 10px;
+    margin: 10px 0;
+    background-color: var(--emp-color-white);
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 100%;
+}
+.producto img {
+    height: 200px;
+    margin-bottom:20px;
+    width: 100%;
+}
+
+
+/* 10. Responsive
+--------------------------------------------------------------*/
+@media (min-width: 768px){
+    .productos{
+        align-items: start;
+        padding: 0px;
+    }
+    .producto{
+        width:23%;
+    }    
+    .empWines_cartFooter,
+    #carrito{
+        align-items: center;
+        justify-content: space-between;
+        width: 23.5%;
+    }
+    #carrito{
+        height: 100%;
+        padding-bottom:120px;
+        overflow-y: scroll;
+        width: 25%;
+    }
+}
