@@ -70,7 +70,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 30px;
     overflow-y: auto;
 }
 #carrito.active{
@@ -80,6 +80,14 @@ body {
     padding-bottom: 0px;
     width:100%;
 }
+#carrito h3 {
+    font-size: 1.3em;
+    text-align:left;
+}
+#carrito .carrito_content {
+    width:80%;
+}
+
 
 /* empWines_cartFooter */
 .empWines_cartFooter{
@@ -87,9 +95,15 @@ body {
     border-top:1px solid #ccc;
     bottom: 0;
     padding:.5em;
+    position: fixed;
+    width: 100%;
+}
+.empWines_cartFooter_first {
+    bottom: 0;
+    padding:.5em;
     display: flex;
     flex-direction: row;
-    position: fixed;
+    justify-content: space-between;    
     width: 100%;
 }
 .empWines_cartFooter #total {
@@ -101,7 +115,7 @@ body {
     margin: 20px 0;
 }
 .empWines_cartFooter #botonQueLimpia {
-    margin: 20px 0;
+    margin: 0px 0px;
 }
 
 /* 3. empWines_list
